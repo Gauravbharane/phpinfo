@@ -1,0 +1,13 @@
+---
+# tasks file for phpinfo
+- package:
+    name: httpd
+    state: present
+- template:
+    src: hello.php.j2
+    dest: /var/www/html/hello.php
+- service: 
+    name: httpd
+    state: started
+    enabled: yes
+ 
